@@ -8,7 +8,7 @@ const Map = () => {
 
   return (
     <div className="container">
-      <Wrapper apiKey={"AIzaSyA9ZNsaoAQW1R8UlO8jaTb767HHNu80QJA"}>
+      <Wrapper apiKey={"AIzaSyBD7x-Hg9Yfzwn6sEpO39RD32nkJkSpdj8"}>
         <Mapsetter center={center} zoom={zoom}>
           <DraggableMarker />
         </Mapsetter>
