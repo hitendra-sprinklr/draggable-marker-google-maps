@@ -4,7 +4,7 @@ import Mapsetter from "./Mapsetter";
 
 const Map = () => {
   const center = { lat: 23.85, lng: 77.6 };
-  const zoom = 4;
+  const zoom = 8;
 
   return (
     <div className="container">

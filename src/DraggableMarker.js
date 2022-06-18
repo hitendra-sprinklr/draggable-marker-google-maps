@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from "react";
 
 const DraggableMarker = ({ map }) => {
   const ref = useRef(null);
-  const [marker, setMarker] = useState();
-  const position = { lat: 23.8, lng: 77.6 };
+  const [marker, setMarker] = useState(null);
+  const [circle, setCircle] = useState(null);
+  const [position, setPosition] = useState({ lat: 23.8, lng: 77.6 });
+  let radius = 10;
   //console.log(map);
 
   const [address, setAddress] = useState();
@@ -46,8 +48,22 @@ const DraggableMarker = ({ map }) => {
 
       console.log("marker", marker);
 
+      let instance = new window.google.maps.Circle({
+        strokeColor: "#34c0eb",
+        fillColor: "#34c0eb",
+        strokeOpacity: 1,
+        strokeWeight: 2,
+        fillOpacity: 0.2,
+      });
+
+      setCircle(instance);
+
       marker.addListener("click", (e) => {
         Geocoding(e.latLng);
+      });
+
+      marker.addListener("dragend", (e) => {
+        setPosition(e.latLng);
       });
     }
   }, [marker]);
@@ -61,6 +77,18 @@ const DraggableMarker = ({ map }) => {
       infowindow.open(map, marker);
     }
   }, [address]);
+
+  useEffect(() => {
+    console.log("circle");
+    if (circle) {
+      circle.setMap(map);
+      circle.setCenter(position);
+      circle.setRadius(100 * 1000);
+    }
+    if (map) {
+      map.setCenter(position);
+    }
+  }, [marker, position, circle]);
 
   return null;
 };
