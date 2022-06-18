@@ -24,6 +24,14 @@ const DraggableMarker = ({ map }) => {
       marker.setDraggable(true);
 
       console.log("marker", marker);
+
+      marker.addListener("click", (e) => {
+        infowindow.setContent(
+          `Latitude : ${marker.position.lat()} Longitude : ${marker.position.lng()}`
+        );
+
+        infowindow.open(map, marker);
+      });
     }
   }, [marker]);
 
