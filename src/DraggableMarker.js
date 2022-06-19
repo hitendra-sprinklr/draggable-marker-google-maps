@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Tooltipdetails from "./Tooltipdetails";
 
 const DraggableMarker = ({ map }) => {
   const ref = useRef(null);
@@ -70,9 +71,12 @@ const DraggableMarker = ({ map }) => {
 
   useEffect(() => {
     if (marker) {
-      infowindow.setContent(
-        `Latitude : ${marker.position.lat()} Longitude : ${marker.position.lng()} Address : ${address}`
-      );
+      const info = Tooltipdetails({
+        lat: marker.position.lat(),
+        lng: marker.position.lng(),
+        add: address,
+      });
+      infowindow.setContent(info);
 
       infowindow.open(map, marker);
     }
