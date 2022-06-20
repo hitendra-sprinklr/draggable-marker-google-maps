@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/draggable-marker-google-maps/static/css/main.29576153.css",
+    "main.js": "/draggable-marker-google-maps/static/js/main.9e46067a.js",
+    "index.html": "/draggable-marker-google-maps/index.html",
+    "main.29576153.css.map": "/draggable-marker-google-maps/static/css/main.29576153.css.map",
+    "main.9e46067a.js.map": "/draggable-marker-google-maps/static/js/main.9e46067a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29576153.css",
+    "static/js/main.9e46067a.js"
+  ]
+}
