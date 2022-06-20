@@ -6,8 +6,8 @@ const DraggableMarker = ({ map }) => {
   const [marker, setMarker] = useState(null);
   const [circle, setCircle] = useState(null);
   const [position, setPosition] = useState({ lat: 23.8, lng: 77.6 });
-  let radius = 10;
-  //console.log(map);
+  let radius = 100000;
+  // console.log(map);
 
   const [address, setAddress] = useState();
 
@@ -87,12 +87,12 @@ const DraggableMarker = ({ map }) => {
     if (circle) {
       circle.setMap(map);
       circle.setCenter(position);
-      circle.setRadius(100 * 1000);
+      circle.setRadius(radius);
     }
     if (map) {
       map.setCenter(position);
     }
-  }, [marker, position, circle]);
+  }, [marker, position, circle, radius]);
 
   return null;
 };
