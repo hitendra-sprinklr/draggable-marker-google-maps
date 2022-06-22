@@ -63,7 +63,7 @@ const DraggableMarker = ({ map }) => {
         Geocoding(e.latLng);
       });
 
-      marker.addListener("dragend", (e) => {
+      marker.addListener("drag", (e) => {
         setPosition(e.latLng);
       });
     }
