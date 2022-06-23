@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import useDraggableMarker from "./useDraggableMarker";
 
 const Mapsetter = ({ center, zoom, children }) => {
   const ref = useRef(null);
@@ -11,6 +12,8 @@ const Mapsetter = ({ center, zoom, children }) => {
       setMap(new window.google.maps.Map(ref.current, { center, zoom }));
     }
   }, [ref, map]);
+
+  useDraggableMarker(map);
 
   return (
     <>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Tooltipdetails from "./Tooltipdetails";
 
-const DraggableMarker = ({ map }) => {
+const useDraggableMarker = (map) => {
   const ref = useRef(null);
   const [marker, setMarker] = useState(null);
   const [circle, setCircle] = useState(null);
@@ -97,8 +97,6 @@ const DraggableMarker = ({ map }) => {
       map.setCenter(position);
     }
   }, [position, circle]);
-
-  return null;
 };
 
-export default DraggableMarker;
+export default useDraggableMarker;
