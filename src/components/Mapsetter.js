@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import useDraggableMarker from "./useDraggableMarker";
+import useDraggableMarker from "../hooks/useDraggableMarker";
 
 const Mapsetter = ({ center, zoom }) => {
   const ref = useRef(null);

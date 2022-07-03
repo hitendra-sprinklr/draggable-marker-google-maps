@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Tooltipdetails from "./Tooltipdetails";
+import Tooltipdetails from "../components/Tooltipdetails";
 
 const useDraggableMarker = (map) => {
   const ref = useRef(null);

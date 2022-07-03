@@ -1,3 +1,3 @@
 # Deployed App link
 
-https://grand-meerkat-b4a085.netlify.app/
+https://hitendra-sprinklr.github.io/draggable-marker-google-maps/
